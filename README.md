@@ -23,7 +23,7 @@ protected void onDestroy() {
 }
 ```
 
-在需要接收的事件的方法上添加@Subscribe，并且接收事件的方法只能有一个形参，例如：
+在需要接收事件的方法上添加@Subscribe，并且接收事件的方法只能有一个形参，例如：
 ```
 @Subscribe
 public void getEvent(Event event) { // 正确，可以接收到事件
@@ -44,7 +44,7 @@ CEventBus.getDefault().post(new Event("来自SecondActivity的消息"));
 ``` 
 
 注解说明，@Subscribe注解可以传入三个值：
-1. @Subscribe(ThreadMode.POSTING)，发送事件时在什么线程，接收事件的方法就在什么线程执行。
+1. @Subscribe(ThreadMode.POSTING)，默认值，发送事件时在什么线程，接收事件的方法就在什么线程执行。
 2. @Subscribe(ThreadMode.MAIN)，无论发送事件时在什么线程，接收事件的方法始终在主线程执行。
 3. @Subscribe(ThreadMode.BACKGROUND)，无论发送事件时在什么线程，接收事件的方法始终在子(后台)线程执行。
 
