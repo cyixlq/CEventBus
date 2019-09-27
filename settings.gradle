@@ -1,0 +1,2 @@
+include ':app', ':ceventbus'
+rootProject.name='CEventBus'
